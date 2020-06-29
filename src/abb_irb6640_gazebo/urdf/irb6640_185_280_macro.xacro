@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:include filename="$(find abb_irb6640_support)/urdf/irb6640_185_280_macro.xacro" />
+  <xacro:macro name="abb_irb6640_185_280_gazebo" params="prefix">
+
+    <!-- get base ABB IRB6640 model -->
+    <xacro:abb_irb6640_185_280 prefix="${prefix}" />
+
+    <!-- transmission list -->
+    <transmission name="${prefix}tran1">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="${prefix}joint_1">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="${prefix}motor1">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+    <transmission name="${prefix}tran2">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="${prefix}joint_2">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="${prefix}motor2">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+    <transmission name="${prefix}tran3">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="${prefix}joint_3">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="${prefix}motor3">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+    <transmission name="${prefix}tran4">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="${prefix}joint_4">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="${prefix}motor4">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+    <transmission name="${prefix}tran5">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="${prefix}joint_5">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="${prefix}motor5">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+    <transmission name="${prefix}tran6">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="${prefix}joint_6">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="${prefix}motor6">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+    <gazebo>
+     <plugin name="joint_state_publisher"
+          filename="libgazebo_ros_joint_state_publisher.so">
+      <jointName>joint_1, joint_2, joint_3, joint_4, joint_5, joint_6</jointName>
+    </plugin>
+    </gazebo>
+    <!-- end of transmission list -->
+
+    <!-- Gazebo-specific link properties -->
+  <!--  <gazebo reference="${prefix}base_link">
+      <turnGravityOff>true</turnGravityOff>
+    </gazebo>
+    <gazebo reference="${prefix}link_1">
+      <turnGravityOff>true</turnGravityOff>
+    </gazebo>
+    <gazebo reference="${prefix}link_2">
+      <turnGravityOff>true</turnGravityOff>
+    </gazebo>
+    <gazebo reference="${prefix}link_3">
+      <turnGravityOff>true</turnGravityOff>
+    </gazebo>
+    <gazebo reference="${prefix}link_4">
+      <turnGravityOff>true</turnGravityOff>
+    </gazebo>
+    <gazebo reference="${prefix}link_5">
+      <turnGravityOff>true</turnGravityOff>
+    </gazebo>
+    <gazebo reference="${prefix}link_6">
+      <turnGravityOff>true</turnGravityOff>
+    </gazebo>
+-->
+  </xacro:macro>
+</robot>
