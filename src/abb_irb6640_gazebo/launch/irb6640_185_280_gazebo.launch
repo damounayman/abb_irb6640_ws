@@ -8,7 +8,7 @@
 
   <!-- start simulated world -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="worlds/empty.world"/>
+    <arg name="world_name" value="$(find abb_irb6640_gazebo)/world/workcellworld.world"/>
     <arg name="gui" value="true"/>
     <arg name="paused" value="$(arg paused)"/>
   </include>

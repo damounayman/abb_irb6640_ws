@@ -1,0 +1,65 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <world name="default">
+    <!-- A global light source -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+    <!-- A ground plane -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+      <model name="collision">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.1 0.1 0.1</size>
+          </box>
+        </geometry>
+      </visual>
+      <collision name="cage_1">
+        <pose>0.9 2.52 1.1 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>4.3 0.07 2.2</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="cage_2">
+        <pose>0.9 -2.52 1.1 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>4.3 0.07 2.2</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="cage_3">
+        <pose>3.03 0 1.1 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.07 5 2.2</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="cage_4">
+        <pose>-1.23 0 1.1 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.07 5 2.2</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="table_tournante">
+        <pose>1.9 1 0.27 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.05 1.1 0.6</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+  </world>
+</sdf>

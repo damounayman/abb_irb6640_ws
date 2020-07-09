@@ -7,9 +7,28 @@
 
   <!-- connect robot with world -->
   <link name="world" />
-  <joint name="world_to_base_link_joint" type="fixed">
+
+  <link name="workcell">
+    <visual>
+      <origin xyz="-1.256 -2.635 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://abb_irb6640_support/meshes/irb6640_185_280/visual/workcell.STL" scale="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+    <inertial>
+      <mass value="92.5052"/>
+      <inertia ixx="1.0" ixy="1.0" ixz="1.0" iyy="1.0" iyz="1.0" izz="1.0" />
+    </inertial>
+
+  </link>
+  <joint name="world_to_base" type="fixed">
     <parent link="world" />
     <child link="base_link" />
+  </joint>
+
+  <joint name="workcell" type="fixed">
+    <parent link="world" />
+    <child link="workcell" />
   </joint>
 
   <!-- ros_control plugin -->
