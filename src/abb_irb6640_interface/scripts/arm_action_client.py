@@ -25,14 +25,7 @@ if __name__ == '__main__':
 
 
     while not rospy.is_shutdown():
-        time = 10
-        tick = 0
-        step = 0.1
-        freq = 1.0
-        phase = np.random.uniform(np.pi)
-        while tick <= time:
-            x = 2*np.pi*freq*tick + phase
-            positions = np.sin(x)
-            move_joint([positions, 0, 0, 0, 0, 0])
-            tick += step
+
+            move_joint([1.5, 0, 0, 0, 0, 0])
+
             rate.sleep()

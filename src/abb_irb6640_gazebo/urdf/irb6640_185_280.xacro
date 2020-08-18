@@ -2,7 +2,14 @@
 
 <robot name="abb_irb6640_185_280" xmlns:xacro="http://ros.org/wiki/xacro">
   <xacro:include filename="$(find abb_irb6640_gazebo)/urdf/irb6640_185_280_macro.xacro" />
+  <xacro:include filename="$(find abb_irb6640_gazebo)/urdf/sensors/xtion_pro_live.urdf.xacro"/>
 
+  <xacro:property name="deg_to_rad" value="0.01745329251994329577"/>
+
+  <!-- Constants -->
+  <xacro:property name="M_SCALE" value="0.001 0.001 0.001"/> 
+  <xacro:property name="M_PI" value="3.14159"/>
+  
   <xacro:abb_irb6640_185_280_gazebo prefix="" />
 
   <!-- connect robot with world -->
@@ -30,6 +37,12 @@
     <parent link="world" />
     <child link="workcell" />
   </joint>
+  
+    <!-- Define RGB-D sensor -->
+  <xacro:xtion_pro_live name="rgbd_camera" parent="base">
+    <origin xyz="3.07 -1.6 2.4" rpy="0 ${75.0 * deg_to_rad} 0"/>
+    <origin xyz="0 0 0" rpy="${-90.0 * deg_to_rad} 0 ${-90.0 * deg_to_rad}"/>
+  </xacro:xtion_pro_live>
 
   <!-- ros_control plugin -->
   <gazebo>
