@@ -1,8 +1,0 @@
-prefix=/home/geekayman/irb6640_ws/install
-
-Name: interpreter_xyz_rpy
-Description: Description of interpreter_xyz_rpy
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: roscpp roslib std_msgs

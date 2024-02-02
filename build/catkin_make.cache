@@ -1,2 +1,0 @@
-abb_irb6640_gazebo:abb_irb6640_interface:abb_irb6640_moveit_config:abb_irb6640_support:sensors
--DCATKIN_DEVEL_PREFIX=/home/geekayman/irb6640_ws/devel -DCMAKE_INSTALL_PREFIX=/home/geekayman/irb6640_ws/install -G Unix Makefiles
